@@ -1,0 +1,27 @@
+<% include ../partials/header.ejs %>
+<div class="jumbotron">
+    <h1>Book List</h1>
+</div>
+<div class="container">
+<section>
+    <div class="newBookLink">
+        <a href="/books/new">New Book</a>
+    </div>
+    <div class="row">
+        <div class="book">
+        <% for(let book of books) { %>
+            <div class="col-sm-3">              
+                <a href="/books/<%= book.id %>">
+                    <img src="/images/books/<%= book.image %>" class="img-thumbnail img-fluid" width="75">
+                </a>                
+                    <h4 class="bookTitle"><%= book.title %></h4>
+                    <p class="p1"><%= book.author %></p>
+                    <p class="p2"><%= book.year %></p>
+                    <p class="p3"><%= book.price %></p>               
+            </div>      
+        <% } %>
+    </div>
+    </div>
+</section>
+</div>
+<% include ../partials/footer.ejs %>

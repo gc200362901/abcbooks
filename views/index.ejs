@@ -1,0 +1,95 @@
+<% include ./partials/header.ejs %>
+<div class="topMain">
+  <div class="imgMain">
+    <img src="../images/bookMain.jpg" alt="Book and Coffee" style="max-width: 100%;">
+  </div>
+    <div class="centered">
+      <h1>ABC Books</h1>
+      <br>
+      <p>A wide selection of titles and genres to choose from</p>
+      <br>
+      <br>
+      <a class="btnMain btn-default" href="/books" role="button">View Books</a>
+  </div>
+</div>
+<div class="about">
+  <div class="row">
+    <div class="col-sm-5">
+      <h3>About Us</h3>
+      <br>
+      <p>ABC Books was established in 2018 with the goal of connecting reading enthusiasts 
+        with hard-to-find and out-of-print books. Our wide selection has the right book for
+        every reader of any skill level. If there is a title we are missing, please contact 
+        us and we will try our best to locate it for you. We also carry classic titles!</p>
+    </div>
+    <div class="col-sm-2">       
+    </div>
+    <div class="col-sm-5">
+      <h3>New Arrivals</h3>
+      <br>  
+      <% for(let book of books) { %>
+        <p><%= book.title %> by <%= book.author %></p>
+      <% } %>
+    </div>
+  </div>
+</div>
+<div class="location">
+  <div class="row">
+    <div class="col-sm-4">
+      <div id="map">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11400.133764435881!2d-79.6690531!3d44.4119595!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x7894d4f2316bbb8d!2sGeorgian+College!5e0!3m2!1sen!2sca!4v1532242771455" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <h3>Visit Us</h3>
+      <div class="locationIcons">
+        <i class="fas fa-car"></i>
+        <i class="fas fa-bus"></i>
+        <i class="fas fa-walking"></i>
+      </div>        
+    </div>
+    <div class="col-sm-4">
+      <div class="table-responsive">
+        <br>
+      <table class="table">      
+        <tr>
+          <td>Mon</td>
+          <td>09:00am</td>
+          <td>07:00pm</td>
+        </tr>
+        <tr>
+          <td>Tue</td>
+          <td>09:00am</td>
+          <td>07:00pm</td>
+        </tr>
+        <tr>
+          <td>Wed</td>
+          <td>09:00am</td>
+          <td>07:00pm</td>
+        </tr>
+        <tr>
+          <td>Thu</td>
+          <td>09:00am</td>
+          <td>07:00pm</td>
+        </tr>
+        <tr>
+          <td>Fri</td>
+          <td>09:00am</td>
+          <td>07:00pm</td>
+          </tr>
+          <tr>
+          <td>Sat</td>
+          <td>10:00am</td>
+          <td>06:00pm</td>
+          </tr>
+          <tr>
+          <td>Sun</td>
+          <td>10:00am</td>
+          <td>05:00pm</td>
+          </tr>
+      </table>
+    </div>
+    </div>
+  </div>
+</div>
+<% include ./partials/footer.ejs %>
