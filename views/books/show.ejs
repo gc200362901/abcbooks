@@ -1,0 +1,37 @@
+<% include ../partials/header.ejs %>
+<div class="h1title">
+    <h2><%= book.title %> by <%= book.author %></h2>
+</div>
+<div class="container">
+    <div class="bookSelection">
+        <div class="row">
+            <div class="bookShow">
+                <div class="col-sm-6">
+                    <img src="/images/books/<%= book.image %>" class="img-thumbnail img-fluid" width="175">
+                    <h3>$<%= book.price %></h3>
+                    <br>
+                    <p class="p1"><span style="font-weight:700">Title: </span><%= book.title %></p>
+                    <p class="p2"><span style="font-weight:700">Author: </span><%= book.author %></p>
+                    <p class="p3"><span style="font-weight:700">Year: </span><%= book.year %></p>
+                    <p class="p4"><span style="font-weight:700">Description: </span><%= book.description %></p>
+                    <br>
+                    <br>
+                    <div class="addtocart">
+                        <a href="#" class="fas fa-cart-plus" style="padding: 0; font-size: 21px; color: #023347;"> Add To Cart</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="adminActions">
+                    <legend>Adminstrator Controls</legend>
+                    <a href="/books/<%= book.id %>/edit" class="btn btn-primary">Edit</a>             
+                    <form action="/books/<%= book.id %>/delete" method="post"  onsubmit="return confirm('Are you sure you want to delete this product?');">
+                        <input type="hidden" name="id" value="<%= book.id %>">
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<% include ../partials/footer.ejs %>

@@ -1,6 +1,6 @@
 <% include ../partials/header.ejs %>
-<div class="jumbotron">
-    <h1>Book List</h1>
+<div class="h1title">
+    <h2>Available Books</h2>
 </div>
 <div class="container">
 <section>
@@ -17,7 +17,7 @@
                     <h4 class="bookTitle"><%= book.title %></h4>
                     <p class="p1"><%= book.author %></p>
                     <p class="p2"><%= book.year %></p>
-                    <p class="p3"><%= book.price %></p>               
+                    <p class="p3">$<%= book.price %></p>               
             </div>      
         <% } %>
     </div>
