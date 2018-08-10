@@ -5,8 +5,11 @@
 <div class="container">
 <section>
     <div class="newBookLink">
+        <% if ( authenticated ) { %>       
         <a href="/books/new">New Book</a>
+        <% } %>
     </div>
+    
     <div class="row">
         <div class="book">
         <% for(let book of books) { %>

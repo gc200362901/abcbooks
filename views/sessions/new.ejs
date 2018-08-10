@@ -1,0 +1,54 @@
+<% include ../partials/header.ejs %>
+<div class="container">
+    <div class="col-sm-4">
+        <section class="newBook">
+            <form action="/sessions" method="post">
+                <fieldset>
+                    <legend>Login</legend>              
+                    <div class="form-group">
+                      <label for="username">Username: *</label>
+                      <input name="username" type="text" class="form-control" required name="username" autofocus />
+                    </div>             
+                    <div class="form-group">
+                      <label for="password">Password: *</label>
+                      <input name="password" type="password" class="form-control" name="password" required />
+                      <a href="/users/new">Register</a>
+                    </div>
+                </fieldset>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-primary btn-md" value="Login"/>
+                </div>
+            </form>
+        </section>
+    </div>
+</div>
+<footer class="container-fluid text-center navbar-fixed-bottom">
+        <div class="row">
+            <div class="col-sm-4">
+                <h3>Contact Us</h3>
+                <br>
+                <p>1 Georgian Dr<br>Barrie, ON<br>L4M 3X9</p>            
+            </div>
+            <div class="col-sm-4">
+                <br>
+                <br>
+                <br>
+                <p>705-555-0101</p>
+                <p>info@abcbooks.com</p>
+            </div>
+            <div class="col-sm-4">
+                <h3>Follow Us</h3>
+                <br>
+                <a href="#" class="fab fa-twitter"></a>
+                <a href="#" class="fab fa-facebook"></a>
+                <a href="#" class="fab fa-youtube"></a>
+                <a href="#" class="fab fa-google"></a>        
+            </div>
+        </div>
+    </footer>
+    
+    <script src="/javascripts/jquery-3.3.1.min.js"></script>
+    <script src="/javascripts/bootstrap.min.js"></script>
+    
+    </body>
+    </html>

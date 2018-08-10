@@ -1,0 +1,35 @@
+<% include ../partials/header.ejs %>
+<div class="container">
+    <div class="col-sm-4">
+        <section class="newBook">
+            <form action="/users" method="post">
+                <fieldset>
+                    <legend>Register</legend>
+                    <div class="form-group">
+                      <label for="email">Email: *</label>
+                      <input name="email" type="email" class="form-control" required autofocus />
+                    </div>
+              
+                    <div class="form-group">
+                      <label for="username">Username: *</label>
+                      <input name="username" type="text" class="form-control" required />
+                    </div>
+              
+                    <div class="form-group">
+                      <label for="password">Password: *</label>
+                      <input name="password" type="password" class="form-control" required />
+                    </div>
+              
+                    <div class="form-group">
+                      <label for="displayName">Display Name: *</label>
+                      <input name="displayName" type="text" class="form-control" required />
+                    </div>
+                </fieldset>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-primary btn-md" value="Submit"/>
+                </div>
+            </form>
+        </section>
+    </div>
+</div>
+<% include ../partials/footer.ejs %>
