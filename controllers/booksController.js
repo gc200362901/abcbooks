@@ -19,6 +19,13 @@ exports.index = function(req, res, next) {
 
 // VIEW books/new
 exports.new = function(req, res, next) {
+    if ( !req.isAuthenticated() ) {
+        req.session.messages = []
+        req.session.messages.push( 'Please login.' )
+    
+        return res.redirect( '/sessions/new' )
+    }
+
     let locals = {
         title: 'New Book'
     }
@@ -46,6 +53,13 @@ exports.show = function(req, res, next) {
 
 // VIEW books/12345/edit
 exports.edit = function(req, res, next) {
+    if ( !req.isAuthenticated() ) {
+        req.session.messages = []
+        req.session.messages.push( 'Please login.' )
+    
+        return res.redirect( '/sessions/new' )
+    }
+
     let locals = {
         title: 'Edit Book'
     }
@@ -63,6 +77,13 @@ exports.edit = function(req, res, next) {
 
 // create
 exports.create = function(req, res, next) {
+    if ( !req.isAuthenticated() ) {
+        req.session.messages = []
+        req.session.messages.push( 'Please login.' )
+    
+        return res.redirect( '/sessions/new' )
+    }
+
     if ( req.files && req.files.image ) {
       let image = req.files.image
       image.mv(`public/images/books/${image.name}`)
@@ -90,6 +111,13 @@ exports.create = function(req, res, next) {
 
   //update
   exports.update = function(req, res, next) {
+    if ( !req.isAuthenticated() ) {
+        req.session.messages = []
+        req.session.messages.push( 'Please login.' )
+    
+        return res.redirect( '/sessions/new' )
+    }
+
     if ( req.files && req.files.image ) {
         let image = req.files.image
         image.mv(`public/images/books/${image.name}`)
@@ -122,6 +150,13 @@ exports.create = function(req, res, next) {
 
   // delete
   exports.delete = function(req, res) {
+    if ( !req.isAuthenticated() ) {
+        req.session.messages = []
+        req.session.messages.push( 'Please login.' )
+    
+        return res.redirect( '/sessions/new' )
+    }
+
     Book.remove({
         _id: req.body.id
     })
